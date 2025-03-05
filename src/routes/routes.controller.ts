@@ -11,6 +11,9 @@ export class RoutesController {
   @Get()
   @UseGuards(AuthGuard)
   homePage(@Res() res: Response) {
+    if (res.locals.username) {
+      res.redirect("dashboard")
+    }
     res.render("index")
     // return {message: "message"}
   }

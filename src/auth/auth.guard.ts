@@ -21,7 +21,7 @@ export class AuthGuard implements CanActivate {
       response.redirect("/auth/login")
     }
 
-    response.locals.username = decoded.sub;
+    response.locals.username = decoded?.sub;
 
     return true;
   }
