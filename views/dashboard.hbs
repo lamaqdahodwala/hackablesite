@@ -1,20 +1,25 @@
-  <h1>Hello {{username}}!</h1>
-  <h3>Your balance is currently {{balance}}</h3>
+<h1>Hello {{username}}!</h1>
+<h3>Your balance is currently {{balance}}</h3>
 
-  <a href="/transfer">Make transfer</a>
-  {{#if role}}
-    <a href="/postArticle">Create an announcement</a>
-  {{/if}}
+<a href='/transfer'>Make transfer</a>
+{{#if isAdmin}}
+  <hr />
+  <form action='/article/create' method='post'>
+    <h4>Make an announcement (Admin)</h4>
+    <p>Title: <input type='text' name='title' /></p>
+    <p>Content:</p>
+    <textarea name='content' id='' cols='30' rows='10'></textarea>
+    <button type='submit'>Create</button>
+  </form>
+{{/if}}
 
-  <hr>
-  <p>View announcements</p>
+<hr />
+<p>View announcements</p>
 
+{{#each newsArticles}}
 
-  {{#each newsArticles}}
-
-    <li style="border: 1px gray solid;">  
-    <h3>{{ title }}</h3>
+  <li style='border: 1px gray solid;'>
+    <h3>{{title}}</h3>
     <p>{{{content}}}</p>
-    </li>
-  {{/each}}
-
+  </li>
+{{/each}}
