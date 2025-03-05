@@ -1,0 +1,15 @@
+<h1>Search our locations!</h1>
+<hr />
+<form method='get'>
+  <input type='text' name='city' placeholder='City...' value='{{cityName}}' />
+  <button>Search</button>
+</form>
+
+<p>Results:</p>
+<ul>
+  {{#each results}}
+    <li><h3>{{branchName}} {{username}}</h3>
+      <p>{{address}} {{password}} - {{telephoneNumber}} {{balance}}</p></li>
+    {{else}} 
+    <p>No locations found in  <b>"{{cityName}}"</b></p>
+  {{/each}}</ul>

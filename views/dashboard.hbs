@@ -1,0 +1,20 @@
+  <h1>Hello {{username}}!</h1>
+  <h3>Your balance is currently {{balance}}</h3>
+
+  <a href="/transfer">Make transfer</a>
+  {{#if role}}
+    <a href="/postArticle">Create an announcement</a>
+  {{/if}}
+
+  <hr>
+  <p>View announcements</p>
+
+
+  {{#each newsArticles}}
+
+    <li style="border: 1px gray solid;">  
+    <h3>{{ title }}</h3>
+    <p>{{{content}}}</p>
+    </li>
+  {{/each}}
+
