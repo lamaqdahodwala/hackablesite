@@ -31,7 +31,7 @@ model BankLocation {
 
 model Article {
   id Int @id @default(autoincrement())
-
   title String
   content String
+  createdAt DateTime @default(now())
 }
